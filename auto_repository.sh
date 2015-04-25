@@ -32,6 +32,19 @@ PROVIDER_ORIGIN_2="git@github.com:${USER}/${REPO}.git"
 
 
 #
+# single exit - return with error
+#
+
+err_ret() {
+  cd -
+  # back to initial directory
+
+  exit ${1}
+  #return with error code
+}
+
+
+#
 # parse input arguments
 #
 
@@ -52,23 +65,9 @@ else
     *)
       echo "ERROR: Unknown provider - ${PROVIDER}."
       echo "Usage: Navigate to the project, execute: $0 <bitbucket|github>"
-      exit 1 ;;
+      err_ret 1 ;;
   esac
 fi
-
-
-#
-# single exit - return with error
-#
-
-err_ret() {
-  cd -
-  # back to initial directory
-
-  exit ${1}
-  #return with error code
-}
-
 
 echo "Creating ${REPO} on ${PROVIDER} as [PRIVATE=${PRIVATE}]."
 echo ""
