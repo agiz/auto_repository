@@ -8,14 +8,14 @@ This script will create remote repository of your current project.
 
 More explicit, it will:
 - Create remote repository either on github or bitbucket.
-- Initialize your project (`git init)`.
+- Initialize your project (`git init)`.s
 - Add remote repository (`git remote add origin <provider>`).
 - Add all files (`git add .`).
 - Commit all changes (`git commit -a -m 'Initial commit.'`).
 - Push your project to the remote provider (`git push -u origin master`).
 
 Script only works on vanilla projects without `.git` directory.
-If such directory alread exists, scipt will terminate without
+If such directory alread exists, script will terminate without
 making any modifications.
 
 ## What this is not.
